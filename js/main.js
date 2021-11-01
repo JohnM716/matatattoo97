@@ -48,7 +48,7 @@ let swiper = new Swiper(".galeria__container", {
 }); 
 
 
-/*SHOW SCROLL UP*/ 
+/*SHOW SCROLL ARRIBA*/ 
 function scroll__arriba(){
     const scroll__arriba = document.getElementById('scroll-arriba');
     if(this.scrollY >= 560) scroll__arriba.classList.add('show-scroll'); else scroll__arriba.classList.remove('show-scroll')
