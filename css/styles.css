@@ -220,6 +220,7 @@ img {
 }
 
 .inicio__description {
+  text-align: justify;
   margin-bottom: var(--mb-2);
   color: var(--title-color);
 }
