@@ -36,6 +36,10 @@ let swiper = new Swiper(".galeria__container", {
     loop: true,
     slidesPerView: 3,
     spaceBetween: 30,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -46,6 +50,18 @@ let swiper = new Swiper(".galeria__container", {
     },
     
 }); 
+
+/*Galeria Full img*/
+ const fullImgBox = document.getElementById("fullImgBox"),
+ fullImg = document.getElementById("fullImg");
+
+ function openFullImg(reference){
+     fullImgBox.style.display = "flex";
+     fullImg.src = reference;
+ }
+ function closeImg(){
+    fullImgBox.style.display = "none";
+ }
 
 
 /*SHOW SCROLL ARRIBA*/ 

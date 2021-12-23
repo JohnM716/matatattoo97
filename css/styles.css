@@ -295,6 +295,7 @@ img {
   width: 265px;
   border-radius: 0.5rem;
   justify-self: center;
+  cursor: pointer;
 }
 
 .galeria__title {
@@ -333,6 +334,33 @@ img {
 .swiper-button-prev,
 .swiper-pagination-bullets {
   outline: none;
+}
+
+.full-img {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.full-img span {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.full-img img {
+  width: 90%;
+  max-width: 500px;
 }
 
 /*PROYECTOS*/
@@ -740,6 +768,12 @@ img {
 
   .nav-imgmaquina {
     width: 30px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev,
+  .swiper-pagination-bullets {
+    display: none;
   }
 }
 
