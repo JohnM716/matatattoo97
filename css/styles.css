@@ -252,35 +252,197 @@ img {
   font-size: 1.5rem;
 }
 
-/*BUTTONS*/
-.button {
-  display: inline-block;
-  background-color: var(--first-color);
-  color: #fff;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  font-weight: var(--font-medium);
+/* close */
+.close {
+  position: relative;
+  background: var(--first-color);
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  box-shadow: 6px 0px 0px #00e6f6;
+  outline: transparent;
+  letter-spacing: 3px;
+}
+.close::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  content: "X";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, var(--first-color-alt) 5%);
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  clip-path: var(--slice-0);
+ }
+ 
+ .close:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+ }
+ 
+ @keyframes glitch {
+  0% {
+   clip-path: var(--slice-1);
+   transform: translate(-20px, -10px);
+  }
+ 
+  10% {
+   clip-path: var(--slice-3);
+   transform: translate(10px, 10px);
+  }
+ 
+  20% {
+   clip-path: var(--slice-1);
+   transform: translate(-10px, 10px);
+  }
+ 
+  30% {
+   clip-path: var(--slice-3);
+   transform: translate(0px, 5px);
+  }
+ 
+  40% {
+   clip-path: var(--slice-2);
+   transform: translate(-5px, 0px);
+  }
+ 
+  50% {
+   clip-path: var(--slice-3);
+   transform: translate(5px, 0px);
+  }
+ 
+  60% {
+   clip-path: var(--slice-4);
+   transform: translate(5px, 10px);
+  }
+ 
+  70% {
+   clip-path: var(--slice-2);
+   transform: translate(-10px, 10px);
+  }
+ 
+  80% {
+   clip-path: var(--slice-5);
+   transform: translate(20px, -10px);
+  }
+ 
+  90% {
+   clip-path: var(--slice-1);
+   transform: translate(-10px, 0px);
+  }
+ 
+  100% {
+   clip-path: var(--slice-1);
+   transform: translate(0);
+  }
+ }
+
+/*BUTTONS*/ 
+.button--flex,
+.button--flex::after {
+ padding: 16px 20px;
+ font-size: 18px;
+ background: linear-gradient(45deg, transparent 5%, var(--first-color) 5%);
+ border: 0;
+ color: var(--body-color);
+ letter-spacing: 3px;
+ line-height: 1;
+ box-shadow: 6px 0px 0px #00e6f6;
+ outline: transparent;
+ position: relative;
 }
 
-.button:hover {
-  background-color: var(--text-color);
+.button--flex::after {
+ --slice-0: inset(50% 50% 50% 50%);
+ --slice-1: inset(80% -6px 0 0);
+ --slice-2: inset(50% -6px 30% 0);
+ --slice-3: inset(10% -6px 85% 0);
+ --slice-4: inset(40% -6px 43% 0);
+ --slice-5: inset(80% -6px 5% 0);
+ content: "Contactame";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, var(--first-color-alt) 5%);
+ text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+ clip-path: var(--slice-0);
 }
 
-.button__icon {
-  font-size: 1.25rem;
-  margin-left: var(--mb-0-5);
-  transition: 0.3s;
+.button--flex:hover::after {
+ animation: 1s glitch;
+ animation-timing-function: steps(2, end);
 }
 
-.button--flex {
-  display: inline-block;
-  align-items: center;
+@keyframes glitch {
+ 0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+ }
+
+ 10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+ }
+
+ 20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+ }
+
+ 30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+ }
+
+ 40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+ }
 }
 
-.button--white {
-  background-color: #fff;
-  color: var(--first-color);
-}
 
 /*GALERIA*/
 .galeria__container {
@@ -392,7 +554,6 @@ img {
   border-radius: 5%;
   justify-self: center;
 }
-
 /*CONTACTAME y FOOTER*/
 .footer {
   padding-top: 2rem;
